@@ -39,11 +39,13 @@ function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-	if((ball_x == hole_x)&&(ball_y==hole_y)){
+	if((ball_x==hole_x)&&(ball_y==hole_y)){
 		canvas.remove(ball_object);
+		console.log("You scored");
 		document.getElementById("hd3").innerHTML = "You Have Hit The Goal";
 		document.getElementById("myCanvas").style.borderColor="Red";
 	}
+	else{
 		if(keyPressed == '38')
 		{
 			up();
@@ -64,6 +66,7 @@ function my_keydown(e)
 			right();
 			console.log("right");
 		}
+	}
 	function up()
 	{
 		if(ball_y >= 0){
